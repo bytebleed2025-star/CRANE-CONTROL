@@ -52,6 +52,10 @@ const unsigned long WEB_OVERRIDE_DURATION = 5000;
 unsigned long lastWSMessage = 0;
 const unsigned long WS_SAFETY_TIMEOUT = 2000;
 
+bool radioReady = false;
+unsigned long lastRadioRetry = 0;
+const unsigned long RADIO_RETRY_INTERVAL = 5000;
+
 void stopAllCoils() {
   digitalWrite(CoilUp,    LOW);
   digitalWrite(CoilDown,  LOW);
@@ -172,18 +176,17 @@ void setup() {
   packetMutex = xSemaphoreCreateMutex();
 
   if (!radio.begin()) {
-    Serial.println("Radio hardware not responding!");
-    while (1) {
-      delay(1000);
-    }
+    Serial.println("Radio hardware not responding! WiFi/OTA still available.");
+  } else {
+    radio.setChannel(108);
+    radio.setDataRate(RF24_250KBPS);
+    radio.setPALevel(RF24_PA_LOW);
+    radio.setRetries(5, 15);
+    radio.openReadingPipe(1, address);
+    radio.startListening();
+    radioReady = true;
+    Serial.println("Radio initialized OK");
   }
-
-  radio.setChannel(108);
-  radio.setDataRate(RF24_250KBPS);
-  radio.setPALevel(RF24_PA_LOW);
-  radio.setRetries(5, 15);
-  radio.openReadingPipe(1, address);
-  radio.startListening();
 
   setupWebServer();
 
@@ -195,7 +198,21 @@ void loop() {
   ElegantOTA.loop();
   esp_task_wdt_reset();
 
-  if (radio.available()) {
+  if (!radioReady && millis() - lastRadioRetry > RADIO_RETRY_INTERVAL) {
+    lastRadioRetry = millis();
+    if (radio.begin()) {
+      radio.setChannel(108);
+      radio.setDataRate(RF24_250KBPS);
+      radio.setPALevel(RF24_PA_LOW);
+      radio.setRetries(5, 15);
+      radio.openReadingPipe(1, address);
+      radio.startListening();
+      radioReady = true;
+      Serial.println("Radio initialized OK (retry)");
+    }
+  }
+
+  if (radioReady && radio.available()) {
     ControlPacket incoming;
     radio.read(&incoming, sizeof(incoming));
 
