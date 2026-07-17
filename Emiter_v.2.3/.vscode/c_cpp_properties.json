@@ -1,0 +1,30 @@
+{
+    "configurations": [
+        {
+            "name": "ESP32",
+            "includePath": [
+                "${workspaceFolder}/**",
+                "${workspaceFolder}/.pio/libdeps/esp32dev/**",
+                "~/.platformio/packages/framework-arduinoespressif32/cores/esp32/**",
+                "~/.platformio/packages/framework-arduinoespressif32/variants/esp32/**",
+                "~/.platformio/packages/framework-arduinoespressif32/libraries/WiFi/src/**",
+                "~/.platformio/packages/framework-arduinoespressif32/libraries/ESPmDNS/src/**",
+                "~/.platformio/packages/framework-arduinoespressif32/libraries/ArduinoOTA/src/**",
+                "~/.platformio/packages/framework-arduinoespressif32/libraries/Update/src/**",
+                "~/.platformio/packages/framework-arduinoespressif32/libraries/AsyncUDP/src/**",
+                "~/.platformio/packages/framework-arduinoespressif32/tools/sdk/include/**",
+                "~/.platformio/packages/framework-arduinoespressif32/tools/sdk/esp32/include/**"
+            ],
+            "browse": {
+                "limitSymbolsToIncludedHeaders": false,
+                "databaseFilename": ""
+            },
+            "compilerPath": "~/.platformio/packages/toolchain-xtensa-esp32/bin/xtensa-esp32-elf-gcc",
+            "compilerArgs": [],
+            "cStandard": "gnu17",
+            "cppStandard": "gnu++17",
+            "intelliSenseMode": "linux-gcc-x64"
+        }
+    ],
+    "version": 4
+}
