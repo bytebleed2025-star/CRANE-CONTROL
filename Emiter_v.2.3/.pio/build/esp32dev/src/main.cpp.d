@@ -200,13 +200,24 @@
  /home/bytebleeder/.platformio/packages/framework-arduinoespressif32/cores/esp32/cbuf.h \
  /home/bytebleeder/.platformio/packages/framework-arduinoespressif32/libraries/LittleFS/src/LittleFS.h \
  /home/bytebleeder/.platformio/packages/framework-arduinoespressif32/libraries/FS/src/FS.h \
- .pio/libdeps/esp32dev/ESP\ Async\ WebServer/src/ESPAsyncWebServer.h \
- .pio/libdeps/esp32dev/ESP\ Async\ WebServer/src/StringArray.h \
+ .pio/libdeps/esp32dev/ESPAsyncWebServer/src/ESPAsyncWebServer.h \
+ /home/bytebleeder/.platformio/packages/framework-arduinoespressif32/tools/sdk/esp32/include/lwip/lwip/src/include/lwip/tcpbase.h \
  .pio/libdeps/esp32dev/AsyncTCP/src/AsyncTCP.h \
+ .pio/libdeps/esp32dev/AsyncTCP/src/AsyncTCPVersion.h \
  /home/bytebleeder/.platformio/packages/framework-arduinoespressif32/tools/sdk/esp32/include/lwip/lwip/src/include/lwip/pbuf.h \
- .pio/libdeps/esp32dev/ESP\ Async\ WebServer/src/WebResponseImpl.h \
- .pio/libdeps/esp32dev/ESP\ Async\ WebServer/src/WebHandlerImpl.h \
- .pio/libdeps/esp32dev/ESP\ Async\ WebServer/src/AsyncWebSocket.h \
- .pio/libdeps/esp32dev/ESP\ Async\ WebServer/src/AsyncWebSynchronization.h \
- .pio/libdeps/esp32dev/ESP\ Async\ WebServer/src/AsyncEventSource.h \
+ .pio/libdeps/esp32dev/ESPAsyncWebServer/src/AsyncWebServerVersion.h \
+ .pio/libdeps/esp32dev/ESPAsyncWebServer/src/./literals.h \
+ .pio/libdeps/esp32dev/ESPAsyncWebServer/src/AsyncEventSource.h \
+ .pio/libdeps/esp32dev/ESPAsyncWebServer/src/AsyncWebSocket.h \
+ .pio/libdeps/esp32dev/ESPAsyncWebServer/src/AsyncWebServerLogging.h \
+ /home/bytebleeder/.platformio/packages/framework-arduinoespressif32/cores/esp32/esp32-hal-log.h \
+ .pio/libdeps/esp32dev/ESPAsyncWebServer/src/WebHandlerImpl.h \
+ .pio/libdeps/esp32dev/ESPAsyncWebServer/src/WebResponseImpl.h \
+ .pio/libdeps/esp32dev/ElegantOTA/src/ElegantOTA.h \
+ /home/bytebleeder/.platformio/packages/framework-arduinoespressif32/cores/esp32/stdlib_noniso.h \
+ .pio/libdeps/esp32dev/ElegantOTA/src/elop.h \
+ /home/bytebleeder/.platformio/packages/framework-arduinoespressif32/libraries/Update/src/Update.h \
+ /home/bytebleeder/.platformio/packages/framework-arduinoespressif32/cores/esp32/MD5Builder.h \
+ /home/bytebleeder/.platformio/packages/framework-arduinoespressif32/tools/sdk/esp32/include/esp_rom/include/esp_rom_md5.h \
+ /home/bytebleeder/.platformio/packages/framework-arduinoespressif32/cores/esp32/StreamString.h \
  /home/bytebleeder/.platformio/packages/framework-arduinoespressif32/tools/sdk/esp32/include/esp_system/include/esp_task_wdt.h

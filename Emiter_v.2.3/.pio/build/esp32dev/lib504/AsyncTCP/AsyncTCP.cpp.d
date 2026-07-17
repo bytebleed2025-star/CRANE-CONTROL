@@ -1,7 +1,17 @@
 .pio/build/esp32dev/lib504/AsyncTCP/AsyncTCP.cpp.o: \
  .pio/libdeps/esp32dev/AsyncTCP/src/AsyncTCP.cpp \
- /home/bytebleeder/.platformio/packages/framework-arduinoespressif32/cores/esp32/Arduino.h \
- /home/bytebleeder/.platformio/packages/framework-arduinoespressif32/cores/esp32/esp_arduino_version.h \
+ .pio/libdeps/esp32dev/AsyncTCP/src/AsyncTCP.h \
+ .pio/libdeps/esp32dev/AsyncTCP/src/AsyncTCPVersion.h \
+ /home/bytebleeder/.platformio/packages/framework-arduinoespressif32/cores/esp32/IPAddress.h \
+ /home/bytebleeder/.platformio/packages/framework-arduinoespressif32/cores/esp32/WString.h \
+ /home/bytebleeder/.platformio/packages/framework-arduinoespressif32/cores/esp32/pgmspace.h \
+ /home/bytebleeder/.platformio/packages/framework-arduinoespressif32/cores/esp32/Printable.h \
+ /home/bytebleeder/.platformio/packages/framework-arduinoespressif32/cores/esp32/IPv6Address.h \
+ /home/bytebleeder/.platformio/packages/framework-arduinoespressif32/tools/sdk/esp32/include/lwip/lwip/src/include/lwip/ip6_addr.h \
+ /home/bytebleeder/.platformio/packages/framework-arduinoespressif32/tools/sdk/esp32/include/lwip/lwip/src/include/lwip/opt.h \
+ /home/bytebleeder/.platformio/packages/framework-arduinoespressif32/tools/sdk/esp32/include/lwip/port/esp32/include/lwipopts.h \
+ /home/bytebleeder/.platformio/packages/framework-arduinoespressif32/tools/sdk/esp32/include/newlib/platform_include/sys/ioctl.h \
+ /home/bytebleeder/.platformio/packages/framework-arduinoespressif32/tools/sdk/esp32/include/esp_system/include/esp_task.h \
  /home/bytebleeder/.platformio/packages/framework-arduinoespressif32/tools/sdk/esp32/include/freertos/include/freertos/FreeRTOS.h \
  /home/bytebleeder/.platformio/packages/framework-arduinoespressif32/tools/sdk/esp32/include/freertos/include/esp_additions/freertos/FreeRTOSConfig.h \
  /home/bytebleeder/.platformio/packages/framework-arduinoespressif32/tools/sdk/esp32/include/esp_common/include/esp_compiler.h \
@@ -61,12 +71,36 @@
  /home/bytebleeder/.platformio/packages/framework-arduinoespressif32/tools/sdk/esp32/include/xtensa/include/xtensa/xtensa_context.h \
  /home/bytebleeder/.platformio/packages/framework-arduinoespressif32/tools/sdk/esp32/include/freertos/port/xtensa/include/freertos/portmacro_deprecated.h \
  /home/bytebleeder/.platformio/packages/framework-arduinoespressif32/tools/sdk/esp32/include/freertos/include/freertos/mpu_wrappers.h \
+ /home/bytebleeder/.platformio/packages/framework-arduinoespressif32/tools/sdk/esp32/include/freertos/include/esp_additions/freertos/FreeRTOSConfig.h \
+ /home/bytebleeder/.platformio/packages/framework-arduinoespressif32/tools/sdk/esp32/include/lwip/port/esp32/include/netif/dhcp_state.h \
+ /home/bytebleeder/.platformio/packages/framework-arduinoespressif32/tools/sdk/esp32/include/lwip/port/esp32/include/sntp/sntp_get_set_time.h \
+ /home/bytebleeder/.platformio/packages/framework-arduinoespressif32/tools/sdk/esp32/include/lwip/lwip/src/include/lwip/debug.h \
+ /home/bytebleeder/.platformio/packages/framework-arduinoespressif32/tools/sdk/esp32/include/lwip/lwip/src/include/lwip/arch.h \
+ /home/bytebleeder/.platformio/packages/framework-arduinoespressif32/tools/sdk/esp32/include/lwip/port/esp32/include/arch/cc.h \
+ /home/bytebleeder/.platformio/packages/framework-arduinoespressif32/tools/sdk/esp32/include/newlib/platform_include/errno.h \
+ /home/bytebleeder/.platformio/packages/framework-arduinoespressif32/tools/sdk/esp32/include/lwip/port/esp32/include/arch/sys_arch.h \
  /home/bytebleeder/.platformio/packages/framework-arduinoespressif32/tools/sdk/esp32/include/freertos/include/freertos/task.h \
  /home/bytebleeder/.platformio/packages/framework-arduinoespressif32/tools/sdk/esp32/include/freertos/include/freertos/list.h \
  /home/bytebleeder/.platformio/packages/framework-arduinoespressif32/tools/sdk/esp32/include/freertos/include/esp_additions/freertos/task_snapshot.h \
- /home/bytebleeder/.platformio/packages/framework-arduinoespressif32/tools/sdk/esp32/include/freertos/include/freertos/semphr.h \
  /home/bytebleeder/.platformio/packages/framework-arduinoespressif32/tools/sdk/esp32/include/freertos/include/freertos/queue.h \
  /home/bytebleeder/.platformio/packages/framework-arduinoespressif32/tools/sdk/esp32/include/freertos/include/freertos/task.h \
+ /home/bytebleeder/.platformio/packages/framework-arduinoespressif32/tools/sdk/esp32/include/freertos/include/freertos/semphr.h \
+ /home/bytebleeder/.platformio/packages/framework-arduinoespressif32/tools/sdk/esp32/include/freertos/include/freertos/queue.h \
+ /home/bytebleeder/.platformio/packages/framework-arduinoespressif32/tools/sdk/esp32/include/lwip/port/esp32/include/arch/vfs_lwip.h \
+ /home/bytebleeder/.platformio/packages/framework-arduinoespressif32/tools/sdk/esp32/include/lwip/lwip/src/include/lwip/def.h \
+ /home/bytebleeder/.platformio/packages/framework-arduinoespressif32/tools/sdk/esp32/include/lwip/lwip/src/include/lwip/ip6_zone.h \
+ /home/bytebleeder/.platformio/packages/framework-arduinoespressif32/tools/sdk/esp32/include/lwip/lwip/src/include/lwip/ip_addr.h \
+ /home/bytebleeder/.platformio/packages/framework-arduinoespressif32/tools/sdk/esp32/include/lwip/lwip/src/include/lwip/def.h \
+ /home/bytebleeder/.platformio/packages/framework-arduinoespressif32/tools/sdk/esp32/include/lwip/lwip/src/include/lwip/ip4_addr.h \
+ /home/bytebleeder/.platformio/packages/framework-arduinoespressif32/tools/sdk/esp32/include/lwip/lwip/src/include/lwip/pbuf.h \
+ /home/bytebleeder/.platformio/packages/framework-arduinoespressif32/tools/sdk/esp32/include/lwip/lwip/src/include/lwip/err.h \
+ .pio/libdeps/esp32dev/AsyncTCP/src/AsyncTCPLogging.h \
+ /home/bytebleeder/.platformio/packages/framework-arduinoespressif32/cores/esp32/esp32-hal-log.h \
+ /home/bytebleeder/.platformio/packages/framework-arduinoespressif32/tools/sdk/esp32/include/log/include/esp_log.h \
+ /home/bytebleeder/.platformio/packages/framework-arduinoespressif32/tools/sdk/esp32/include/log/include/esp_log_internal.h \
+ .pio/libdeps/esp32dev/AsyncTCP/src/AsyncTCPSimpleIntrusiveList.h \
+ /home/bytebleeder/.platformio/packages/framework-arduinoespressif32/cores/esp32/Arduino.h \
+ /home/bytebleeder/.platformio/packages/framework-arduinoespressif32/cores/esp32/esp_arduino_version.h \
  /home/bytebleeder/.platformio/packages/framework-arduinoespressif32/cores/esp32/esp32-hal.h \
  /home/bytebleeder/.platformio/packages/framework-arduinoespressif32/tools/sdk/esp32/include/esp_hw_support/include/esp_sleep.h \
  /home/bytebleeder/.platformio/packages/framework-arduinoespressif32/tools/sdk/esp32/include/hal/include/hal/touch_sensor_types.h \
@@ -76,12 +110,9 @@
  /home/bytebleeder/.platformio/packages/framework-arduinoespressif32/tools/sdk/esp32/include/soc/esp32/include/soc/gpio_struct.h \
  /home/bytebleeder/.platformio/packages/framework-arduinoespressif32/tools/sdk/esp32/include/soc/esp32/include/soc/gpio_reg.h \
  /home/bytebleeder/.platformio/packages/framework-arduinoespressif32/tools/sdk/esp32/include/soc/esp32/include/soc/gpio_sig_map.h \
- /home/bytebleeder/.platformio/packages/framework-arduinoespressif32/tools/sdk/esp32/include/freertos/include/freertos/queue.h \
  /home/bytebleeder/.platformio/packages/framework-arduinoespressif32/tools/sdk/esp32/include/freertos/include/freertos/event_groups.h \
  /home/bytebleeder/.platformio/packages/framework-arduinoespressif32/tools/sdk/esp32/include/freertos/include/freertos/timers.h \
  /home/bytebleeder/.platformio/packages/framework-arduinoespressif32/cores/esp32/esp32-hal-log.h \
- /home/bytebleeder/.platformio/packages/framework-arduinoespressif32/tools/sdk/esp32/include/log/include/esp_log.h \
- /home/bytebleeder/.platformio/packages/framework-arduinoespressif32/tools/sdk/esp32/include/log/include/esp_log_internal.h \
  /home/bytebleeder/.platformio/packages/framework-arduinoespressif32/cores/esp32/esp32-hal-matrix.h \
  /home/bytebleeder/.platformio/packages/framework-arduinoespressif32/cores/esp32/esp32-hal-uart.h \
  /home/bytebleeder/.platformio/packages/framework-arduinoespressif32/tools/sdk/esp32/include/hal/include/hal/uart_types.h \
@@ -109,18 +140,14 @@
  /home/bytebleeder/.platformio/packages/framework-arduinoespressif32/cores/esp32/binary.h \
  /home/bytebleeder/.platformio/packages/framework-arduinoespressif32/cores/esp32/WCharacter.h \
  /home/bytebleeder/.platformio/packages/framework-arduinoespressif32/cores/esp32/WString.h \
- /home/bytebleeder/.platformio/packages/framework-arduinoespressif32/cores/esp32/pgmspace.h \
  /home/bytebleeder/.platformio/packages/framework-arduinoespressif32/cores/esp32/Stream.h \
  /home/bytebleeder/.platformio/packages/framework-arduinoespressif32/cores/esp32/Print.h \
  /home/bytebleeder/.platformio/packages/framework-arduinoespressif32/cores/esp32/Printable.h \
  /home/bytebleeder/.platformio/packages/framework-arduinoespressif32/cores/esp32/IPAddress.h \
- /home/bytebleeder/.platformio/packages/framework-arduinoespressif32/cores/esp32/WString.h \
- /home/bytebleeder/.platformio/packages/framework-arduinoespressif32/cores/esp32/Printable.h \
  /home/bytebleeder/.platformio/packages/framework-arduinoespressif32/cores/esp32/Client.h \
  /home/bytebleeder/.platformio/packages/framework-arduinoespressif32/cores/esp32/Server.h \
  /home/bytebleeder/.platformio/packages/framework-arduinoespressif32/cores/esp32/Udp.h \
  /home/bytebleeder/.platformio/packages/framework-arduinoespressif32/cores/esp32/Stream.h \
- /home/bytebleeder/.platformio/packages/framework-arduinoespressif32/cores/esp32/IPAddress.h \
  /home/bytebleeder/.platformio/packages/framework-arduinoespressif32/cores/esp32/HardwareSerial.h \
  /home/bytebleeder/.platformio/packages/framework-arduinoespressif32/cores/esp32/HWCDC.h \
  /home/bytebleeder/.platformio/packages/framework-arduinoespressif32/cores/esp32/USBCDC.h \
@@ -134,31 +161,12 @@
  /home/bytebleeder/.platformio/packages/framework-arduinoespressif32/tools/sdk/esp32/include/esp_hw_support/include/soc/esp32/spiram.h \
  /home/bytebleeder/.platformio/packages/framework-arduinoespressif32/cores/esp32/io_pin_remap.h \
  /home/bytebleeder/.platformio/packages/framework-arduinoespressif32/cores/esp32/Arduino.h \
- .pio/libdeps/esp32dev/AsyncTCP/src/AsyncTCP.h \
- /home/bytebleeder/.platformio/packages/framework-arduinoespressif32/tools/sdk/esp32/include/lwip/lwip/src/include/lwip/pbuf.h \
- /home/bytebleeder/.platformio/packages/framework-arduinoespressif32/tools/sdk/esp32/include/lwip/lwip/src/include/lwip/opt.h \
- /home/bytebleeder/.platformio/packages/framework-arduinoespressif32/tools/sdk/esp32/include/lwip/port/esp32/include/lwipopts.h \
- /home/bytebleeder/.platformio/packages/framework-arduinoespressif32/tools/sdk/esp32/include/newlib/platform_include/sys/ioctl.h \
- /home/bytebleeder/.platformio/packages/framework-arduinoespressif32/tools/sdk/esp32/include/esp_system/include/esp_task.h \
- /home/bytebleeder/.platformio/packages/framework-arduinoespressif32/tools/sdk/esp32/include/freertos/include/esp_additions/freertos/FreeRTOSConfig.h \
- /home/bytebleeder/.platformio/packages/framework-arduinoespressif32/tools/sdk/esp32/include/lwip/port/esp32/include/netif/dhcp_state.h \
- /home/bytebleeder/.platformio/packages/framework-arduinoespressif32/tools/sdk/esp32/include/lwip/port/esp32/include/sntp/sntp_get_set_time.h \
- /home/bytebleeder/.platformio/packages/framework-arduinoespressif32/tools/sdk/esp32/include/lwip/lwip/src/include/lwip/debug.h \
- /home/bytebleeder/.platformio/packages/framework-arduinoespressif32/tools/sdk/esp32/include/lwip/lwip/src/include/lwip/arch.h \
- /home/bytebleeder/.platformio/packages/framework-arduinoespressif32/tools/sdk/esp32/include/lwip/port/esp32/include/arch/cc.h \
- /home/bytebleeder/.platformio/packages/framework-arduinoespressif32/tools/sdk/esp32/include/lwip/port/esp32/include/arch/sys_arch.h \
- /home/bytebleeder/.platformio/packages/framework-arduinoespressif32/tools/sdk/esp32/include/lwip/port/esp32/include/arch/vfs_lwip.h \
- /home/bytebleeder/.platformio/packages/framework-arduinoespressif32/tools/sdk/esp32/include/lwip/lwip/src/include/lwip/err.h \
+ /home/bytebleeder/.platformio/packages/framework-arduinoespressif32/tools/sdk/esp32/include/lwip/lwip/src/include/lwip/dns.h \
+ /home/bytebleeder/.platformio/packages/framework-arduinoespressif32/tools/sdk/esp32/include/lwip/lwip/src/include/lwip/inet.h \
  /home/bytebleeder/.platformio/packages/framework-arduinoespressif32/tools/sdk/esp32/include/lwip/lwip/src/include/lwip/tcp.h \
  /home/bytebleeder/.platformio/packages/framework-arduinoespressif32/tools/sdk/esp32/include/lwip/lwip/src/include/lwip/tcpbase.h \
  /home/bytebleeder/.platformio/packages/framework-arduinoespressif32/tools/sdk/esp32/include/lwip/lwip/src/include/lwip/mem.h \
  /home/bytebleeder/.platformio/packages/framework-arduinoespressif32/tools/sdk/esp32/include/lwip/lwip/src/include/lwip/ip.h \
- /home/bytebleeder/.platformio/packages/framework-arduinoespressif32/tools/sdk/esp32/include/lwip/lwip/src/include/lwip/def.h \
- /home/bytebleeder/.platformio/packages/framework-arduinoespressif32/tools/sdk/esp32/include/lwip/lwip/src/include/lwip/ip_addr.h \
- /home/bytebleeder/.platformio/packages/framework-arduinoespressif32/tools/sdk/esp32/include/lwip/lwip/src/include/lwip/ip4_addr.h \
- /home/bytebleeder/.platformio/packages/framework-arduinoespressif32/tools/sdk/esp32/include/lwip/lwip/src/include/lwip/ip6_addr.h \
- /home/bytebleeder/.platformio/packages/framework-arduinoespressif32/tools/sdk/esp32/include/lwip/lwip/src/include/lwip/def.h \
- /home/bytebleeder/.platformio/packages/framework-arduinoespressif32/tools/sdk/esp32/include/lwip/lwip/src/include/lwip/ip6_zone.h \
  /home/bytebleeder/.platformio/packages/framework-arduinoespressif32/tools/sdk/esp32/include/lwip/lwip/src/include/lwip/netif.h \
  /home/bytebleeder/.platformio/packages/framework-arduinoespressif32/tools/sdk/esp32/include/lwip/lwip/src/include/lwip/stats.h \
  /home/bytebleeder/.platformio/packages/framework-arduinoespressif32/tools/sdk/esp32/include/lwip/lwip/src/include/lwip/memp.h \
@@ -174,10 +182,8 @@
  /home/bytebleeder/.platformio/packages/framework-arduinoespressif32/tools/sdk/esp32/include/lwip/lwip/src/include/lwip/prot/icmp.h \
  /home/bytebleeder/.platformio/packages/framework-arduinoespressif32/tools/sdk/esp32/include/lwip/lwip/src/include/lwip/icmp6.h \
  /home/bytebleeder/.platformio/packages/framework-arduinoespressif32/tools/sdk/esp32/include/lwip/lwip/src/include/lwip/prot/icmp6.h \
- /home/bytebleeder/.platformio/packages/framework-arduinoespressif32/tools/sdk/esp32/include/lwip/lwip/src/include/lwip/inet.h \
- /home/bytebleeder/.platformio/packages/framework-arduinoespressif32/tools/sdk/esp32/include/lwip/lwip/src/include/lwip/dns.h \
- /home/bytebleeder/.platformio/packages/framework-arduinoespressif32/tools/sdk/esp32/include/esp_system/include/esp_task_wdt.h \
- /home/bytebleeder/.platformio/packages/framework-arduinoespressif32/tools/sdk/esp32/include/lwip/lwip/src/include/lwip/priv/tcpip_priv.h \
  /home/bytebleeder/.platformio/packages/framework-arduinoespressif32/tools/sdk/esp32/include/lwip/lwip/src/include/lwip/tcpip.h \
  /home/bytebleeder/.platformio/packages/framework-arduinoespressif32/tools/sdk/esp32/include/lwip/lwip/src/include/lwip/timeouts.h \
- /home/bytebleeder/.platformio/packages/framework-arduinoespressif32/tools/sdk/esp32/include/lwip/lwip/src/include/lwip/sys.h
+ /home/bytebleeder/.platformio/packages/framework-arduinoespressif32/tools/sdk/esp32/include/lwip/lwip/src/include/lwip/sys.h \
+ /home/bytebleeder/.platformio/packages/framework-arduinoespressif32/tools/sdk/esp32/include/esp_system/include/esp_task_wdt.h \
+ /home/bytebleeder/.platformio/packages/framework-arduinoespressif32/tools/sdk/esp32/include/lwip/lwip/src/include/lwip/priv/tcpip_priv.h

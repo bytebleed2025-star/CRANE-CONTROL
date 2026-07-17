@@ -6,6 +6,7 @@
 #include <LittleFS.h>
 #include <ESPAsyncWebServer.h>
 #include <AsyncTCP.h>
+#include <ElegantOTA.h>
 #include <esp_task_wdt.h>
 
 // Coil output pins
@@ -146,8 +147,10 @@ void setupWebServer() {
     }
   });
   server.addHandler(&ws);
+
+  ElegantOTA.begin(&server);
   server.begin();
-  Serial.println("Async Web server + WebSocket started");
+  Serial.println("Async Web server + WebSocket + ElegantOTA started");
 }
 
 void allCoilsSafetyOff() {
@@ -189,6 +192,7 @@ void setup() {
 }
 
 void loop() {
+  ElegantOTA.loop();
   esp_task_wdt_reset();
 
   if (radio.available()) {
