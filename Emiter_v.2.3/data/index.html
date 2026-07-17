@@ -1,0 +1,317 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1, user-scalable=no">
+  <title>Crane Control GUDANG GTI CIJENGIR</title>
+  <style>
+    * { margin: 0; padding: 0; box-sizing: border-box; -webkit-tap-highlight-color: transparent; }
+
+    body {
+      font-family: 'Segoe UI', system-ui, -apple-system, sans-serif;
+      background: #0d1117;
+      color: #c9d1d9;
+      min-height: 100vh;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      overflow: hidden;
+      user-select: none;
+      -webkit-user-select: none;
+    }
+
+    .header {
+      width: 100%;
+      padding: 16px 20px;
+      background: #161b22;
+      border-bottom: 1px solid #30363d;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+    }
+
+    .header h1 {
+      font-size: 18px;
+      font-weight: 600;
+      color: #f0f6fc;
+      letter-spacing: 0.5px;
+    }
+
+    .conn-dot {
+      width: 10px; height: 10px;
+      border-radius: 50%;
+      background: #f85149;
+      transition: background 0.3s;
+    }
+    .conn-dot.ok { background: #3fb950; }
+
+    .main {
+      flex: 1;
+      display: flex;
+      flex-direction: column;
+      justify-content: center;
+      align-items: center;
+      width: 100%;
+      max-width: 400px;
+      padding: 20px;
+      gap: 24px;
+    }
+
+    .dpad {
+      display: grid;
+      grid-template-columns: 1fr 1fr 1fr;
+      grid-template-rows: 1fr 1fr 1fr;
+      gap: 8px;
+      width: 280px;
+      height: 280px;
+    }
+
+    .dpad-btn {
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      border: 1px solid #30363d;
+      border-radius: 12px;
+      background: #161b22;
+      color: #8b949e;
+      font-size: 28px;
+      cursor: pointer;
+      transition: all 0.1s ease;
+      -webkit-touch-callout: none;
+    }
+
+    .dpad-btn:active, .dpad-btn.active {
+      background: #2ea043;
+      color: #ffffff;
+      border-color: #2ea043;
+      transform: scale(0.96);
+      box-shadow: 0 0 16px rgba(46, 160, 67, 0.4);
+    }
+
+    .dpad-up    { grid-column: 2; grid-row: 1; }
+    .dpad-left  { grid-column: 1; grid-row: 2; }
+    .dpad-center{
+      grid-column: 2; grid-row: 2;
+      background: #0d1117;
+      border: none;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+    }
+    .dpad-right { grid-column: 3; grid-row: 2; }
+    .dpad-down  { grid-column: 2; grid-row: 3; }
+
+    .center-indicator {
+      width: 48px; height: 48px;
+      border-radius: 50%;
+      border: 2px solid #30363d;
+      background: #161b22;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      transition: all 0.2s;
+    }
+    .center-indicator.moving {
+      border-color: #f85149;
+      background: #f85149;
+      box-shadow: 0 0 20px rgba(248, 81, 73, 0.5);
+    }
+    .center-indicator.moving::after {
+      content: '!';
+      color: white;
+      font-size: 22px;
+      font-weight: 700;
+    }
+    .center-indicator::after {
+      content: '';
+    }
+
+    .stop-btn {
+      width: 100%;
+      max-width: 280px;
+      padding: 16px;
+      border: 2px solid #da3633;
+      border-radius: 12px;
+      background: #da3633;
+      color: white;
+      font-size: 18px;
+      font-weight: 700;
+      letter-spacing: 2px;
+      cursor: pointer;
+      transition: all 0.1s;
+      -webkit-touch-callout: none;
+    }
+    .stop-btn:active {
+      background: #b62324;
+      border-color: #b62324;
+      transform: scale(0.97);
+    }
+
+    .status-bar {
+      width: 100%;
+      max-width: 400px;
+      padding: 12px 20px;
+      background: #161b22;
+      border-top: 1px solid #30363d;
+      display: flex;
+      justify-content: space-around;
+      font-size: 12px;
+      color: #8b949e;
+    }
+
+    .status-item {
+      display: flex;
+      align-items: center;
+      gap: 6px;
+    }
+
+    .status-item .dot {
+      width: 8px; height: 8px;
+      border-radius: 50%;
+      background: #30363d;
+      transition: background 0.2s;
+    }
+    .status-item .dot.on { background: #3fb950; }
+
+    .info {
+      font-size: 11px;
+      color: #484f58;
+      text-align: center;
+      padding: 8px;
+    }
+
+    @media (max-height: 600px) {
+      .dpad { width: 220px; height: 220px; }
+      .dpad-btn { font-size: 22px; }
+      .header { padding: 10px 16px; }
+      .main { gap: 16px; padding: 12px; }
+    }
+
+    @media (min-width: 500px) {
+      .dpad { width: 320px; height: 320px; }
+    }
+  </style>
+</head>
+<body>
+  <div class="header">
+    <h1>HOIST CRANE CONTROL--GUDANG GTI CIJENGIR</h1>
+    <div class="conn-dot" id="connDot"></div>
+  </div>
+
+  <div class="main">
+    <div class="dpad">
+      <button class="dpad-btn dpad-up" id="btnUp" data-cmd="liftUp">&#9650;</button>
+      <button class="dpad-btn dpad-left" id="btnLeft" data-cmd="trolleyLeft">&#9664;</button>
+      <div class="dpad-center">
+        <div class="center-indicator" id="centerDot"></div>
+      </div>
+      <button class="dpad-btn dpad-right" id="btnRight" data-cmd="trolleyRight">&#9654;</button>
+      <button class="dpad-btn dpad-down" id="btnDown" data-cmd="liftDown">&#9660;</button>
+    </div>
+
+    <button class="stop-btn" id="btnStop">STOP</button>
+
+    <div class="info">Hold to move &middot; Release to stop</div>
+    <div class="info">Developed by SHD &middot; Release to stop</div>
+  </div>
+
+  <div class="status-bar">
+    <div class="status-item"><div class="dot" id="dotUp"></div>UP</div>
+    <div class="status-item"><div class="dot" id="dotDown"></div>DOWN</div>
+    <div class="status-item"><div class="dot" id="dotLeft"></div>LEFT</div>
+    <div class="status-item"><div class="dot" id="dotRight"></div>RIGHT</div>
+  </div>
+
+  <script>
+    let ws = null;
+    let reconnectTimer = null;
+
+    function connectWS() {
+      const host = location.host || '192.168.8.141';
+      ws = new WebSocket('ws://' + host + '/ws');
+
+      ws.onopen = () => {
+        document.getElementById('connDot').classList.add('ok');
+      };
+
+      ws.onclose = () => {
+        document.getElementById('connDot').classList.remove('ok');
+        reconnectTimer = setTimeout(connectWS, 2000);
+      };
+
+      ws.onerror = () => {
+        ws.close();
+      };
+
+      ws.onmessage = (event) => {
+        try {
+          const data = JSON.parse(event.data);
+          updateStatus(data);
+        } catch(e) {}
+      };
+    }
+
+    function sendCmd(cmd) {
+      if (ws && ws.readyState === WebSocket.OPEN) {
+        ws.send(cmd);
+      }
+    }
+
+    function updateStatus(data) {
+      const map = {
+        liftUp: 'dotUp',
+        liftDown: 'dotDown',
+        trolleyLeft: 'dotLeft',
+        trolleyRight: 'dotRight'
+      };
+      let anyActive = false;
+      for (const key in map) {
+        const dot = document.getElementById(map[key]);
+        if (data[key]) {
+          dot.classList.add('on');
+          anyActive = true;
+        } else {
+          dot.classList.remove('on');
+        }
+      }
+      const center = document.getElementById('centerDot');
+      if (anyActive) {
+        center.classList.add('moving');
+      } else {
+        center.classList.remove('moving');
+      }
+    }
+
+    const buttons = document.querySelectorAll('.dpad-btn');
+
+    function handlePress(e) {
+      e.preventDefault();
+      const btn = e.currentTarget;
+      btn.classList.add('active');
+      sendCmd(btn.dataset.cmd);
+    }
+
+    function handleRelease(e) {
+      e.preventDefault();
+      const btn = e.currentTarget;
+      btn.classList.remove('active');
+      sendCmd('stop');
+    }
+
+    buttons.forEach(btn => {
+      btn.addEventListener('mousedown', handlePress);
+      btn.addEventListener('mouseup', handleRelease);
+      btn.addEventListener('mouseleave', handleRelease);
+      btn.addEventListener('touchstart', handlePress, {passive: false});
+      btn.addEventListener('touchend', handleRelease, {passive: false});
+      btn.addEventListener('touchcancel', handleRelease, {passive: false});
+    });
+
+    const stopBtn = document.getElementById('btnStop');
+    stopBtn.addEventListener('mousedown', (e) => { e.preventDefault(); sendCmd('stop'); });
+    stopBtn.addEventListener('touchstart', (e) => { e.preventDefault(); sendCmd('stop'); }, {passive: false});
+
+    connectWS();
+  </script>
+</body>
+</html>
