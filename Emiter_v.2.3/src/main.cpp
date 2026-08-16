@@ -23,14 +23,9 @@
 RF24 radio(CE_PIN, CSN_PIN);
 const byte address[6] = "00001";
 
-// Wi-Fi credentials
-const char* ssid     = "GTI-GUDANG";
-const char* password = "Pipitq1006";
-
-IPAddress local_IP(192, 168, 8, 141);
-IPAddress gateway(192, 168, 8, 1);
-IPAddress subnet(255, 255, 255, 0);
-IPAddress dns(8, 8, 8, 8);
+// AP credentials (phone/laptop connects to this network)
+const char* ssid     = "CraneControl-AP";
+const char* password = "12345678";
 
 AsyncWebServer server(80);
 AsyncWebSocket ws("/ws");
@@ -90,21 +85,10 @@ void setupWebServer() {
     return;
   }
 
-  WiFi.config(local_IP, gateway, subnet, dns);
-  WiFi.begin(ssid, password);
-  Serial.print("Connecting to WiFi");
-
-  unsigned long wifiStart = millis();
-  while (WiFi.status() != WL_CONNECTED && millis() - wifiStart < 10000) {
-    delay(500);
-    Serial.print(".");
-  }
-
-  if (WiFi.status() == WL_CONNECTED) {
-    Serial.println("\nConnected: " + WiFi.localIP().toString());
-  } else {
-    Serial.println("\nWiFi failed - RF control only");
-  }
+  WiFi.mode(WIFI_AP);
+  WiFi.softAP(ssid, password);
+  Serial.println("AP started: " + String(ssid));
+  Serial.println("AP IP: " + WiFi.softAPIP().toString());
 
   server.on("/", HTTP_GET, [](AsyncWebServerRequest *request) {
     request->send(LittleFS, "/index.html", "text/html");
