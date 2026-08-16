@@ -36,9 +36,11 @@ void setup() {
   Serial.begin(115200);
   Serial.println("Transmitter starting...");
 
-  if (!radio.begin()) {
-    Serial.println("RF24 module not responding!");
-    while (1);
+  delay(200);
+
+  while (!radio.begin()) {
+    Serial.println("RF24 init failed - retrying...");
+    delay(500);
   }
 
   radio.setChannel(108);

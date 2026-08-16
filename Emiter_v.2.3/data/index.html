@@ -227,7 +227,7 @@
     let reconnectTimer = null;
 
     function connectWS() {
-      const host = location.host || '192.168.8.141';
+      const host = location.host || '192.168.4.1';
       ws = new WebSocket('ws://' + host + '/ws');
 
       ws.onopen = () => {
